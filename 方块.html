@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			padding:0;
+			margin:0;
+		}
+		html,body,ul{
+			width: 100%;
+			height: 100%;
+			box-sizing:border-box;
+		}
+		ul {
+			list-style: none;
+			display: flex;
+			flex-flow: wrap;
+			border-bottom: 2px solid #000;
+			border-right: 2px solid #000;
+		}
+		li {
+			width: 25%;
+			height: 50%;
+			border-top: 2px solid #000;
+			border-left: 2px solid #000;
+			box-sizing:border-box;
+			position: relative;
+		}
+		.cen {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.one {background-color: #D35400;}.one div{
+			width: 50px;
+			height: 50px;
+			animation: l1 1.5s infinite;
+			background-color: #fff;
+		}
+		.two {background-color: #2C3E50}
+		.two div{
+			width: 50px;
+			height: 50px;
+			background-color: #fff;
+			opacity: .6;
+			border-radius: 50%;
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			animation: l2 2s infinite ease-in-out;
+		}
+		.two div:nth-child(2){animation-delay: 1s}
+		.three {background-color: #1ABC9C;}
+		.three div{
+			width: 7px;
+			height: 60px;
+			background-color: #fff;
+			float: left;
+			margin:0 4px;
+			animation:l3 1.2s infinite ease-in-out;
+		}
+		.three div:nth-child(2){animation-delay: -1.1s}
+		.three div:nth-child(3){animation-delay: -1.0s}
+		.three div:nth-child(4){animation-delay: -0.9s}
+		.three div:nth-child(5){animation-delay: -0.8s}
+		.four {background-color: #2980B9;}
+		.four div {
+			position: relative;
+			width: 16px;
+			height: 16px;
+		}
+		.four div div {
+		    width: 16px;
+		    height: 16px;
+		    background-color: #fff;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    animation: l4 2s infinite both;
+		}
+		.four div div:nth-child(2){ animation-delay: -0.9s}
+		.five {background-color: #2980B9}
+		.five div{
+			width: 60px;
+			height: 60px;
+			flex-flow: wrap;
+		}
+		.five div div{
+			width: 20px;
+			height: 20px;
+			background-color: #fff;
+			animation: l5 1.3s infinite ease-in-out;
+		}
+		.five div div:nth-child(1){animation-delay: 0.2s;}
+		.five div div:nth-child(2){animation-delay: 0.2s;}
+		.five div div:nth-child(3){animation-delay: 0.4s;}
+		.five div div:nth-child(4){animation-delay: 0.1s;}
+		.five div div:nth-child(5){animation-delay: 0.2s;}
+		.five div div:nth-child(6){animation-delay: 0.3s;}
+		.five div div:nth-child(7){animation-delay: 0s;}
+		.five div div:nth-child(8){animation-delay: 0.1s;}
+		.five div div:nth-child(9){animation-delay: 0.2s;}
+		.six {background-color: #1ABC9C;}
+		.six div {
+			width: 40px;
+			height: 40px;
+			position: relative;
+		}
+		.six div div {
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		.six div div:nth-child(2){transform: rotate(30deg)}
+		.six div div:nth-child(3){transform: rotate(60deg)}
+		.six div div:nth-child(4){transform: rotate(90deg)}
+		.six div div:nth-child(5){transform: rotate(120deg)}
+		.six div div:nth-child(6){transform: rotate(150deg)}
+		.six div div:nth-child(7){transform: rotate(180deg)}
+		.six div div:nth-child(8){transform: rotate(210deg)}
+		.six div div:nth-child(9){transform: rotate(240deg)}
+		.six div div:nth-child(10){transform: rotate(270deg)}
+		.six div div:nth-child(11){transform: rotate(300deg)}
+		.six div div:nth-child(12){transform: rotate(330deg)}
+		.six div div:before{
+			content: '';
+			display: block;
+			width: 10px;
+			height: 10px;
+			background-color: #fff;
+			border-radius: 100%;
+			animation: l6 1.2s infinite both;
+		}
+		.six div div:nth-child(2):before {animation-delay: -1.1s;}
+		.six div div:nth-child(3):before {animation-delay: -1s;}
+		.six div div:nth-child(4):before {animation-delay: -.9s;}
+		.six div div:nth-child(5):before {animation-delay: -.8s;}
+		.six div div:nth-child(6):before {animation-delay: -.7s;}
+		.six div div:nth-child(7):before {animation-delay: -.6s;}
+		.six div div:nth-child(8):before {animation-delay: -.5s;}
+		.six div div:nth-child(9):before {animation-delay: -.4s;}
+		.six div div:nth-child(10):before {animation-delay: -.3s;}
+		.six div div:nth-child(11):before {animation-delay: -.2s;}
+		.six div div:nth-child(12):before {animation-delay: -.1s;}
+		.seven {background-color: #2C3E50;}
+		.seven div {
+			width: 40px;
+			height: 40px;
+			border-radius:50%;
+			background-color: #fff;
+			animation:l7 1s infinite;
+		}
+		@keyframes l1 {
+			0% {transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+			}50% {
+    		transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+			}100% {
+    		transform: perspective(120px) rotateX(-180deg) rotateY(-180deg)}
+		}
+		@keyframes l2 {
+			0%{transform: translate(-50%,-50%) scale(0);}
+			50%{transform: translate(-50%,-50%) scale(1);}
+			100%{transform: translate(-50%,-50%) scale(0);}
+		}
+		@keyframes l3 {
+			0%, 40%, 100% {
+    			transform: scaleY(0.4);
+			}20% {
+				transform: scaleY(1);
+			}
+		}
+		@keyframes l4 {
+			25% {
+   				transform: translateX(42px) rotate(-90deg) scale(0.5);
+			}50% {
+			    transform: translateX(42px) translateY(42px) rotate(-179deg);
+			}50.1% {
+			    transform: translateX(42px) translateY(42px) rotate(-180deg);
+			}75% {
+			    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+			}100% {
+			    transform: rotate(-360deg);
+			}
+		}
+		@keyframes l5 {
+			0%, 70%, 100% {transform: scale3D(1, 1, 1)}
+			35% {transform: scale3D(0, 0, 1)}
+		}
+		@keyframes l6 {
+			0%, 80%, 100% {transform: scale(0)}
+			40% {transform: scale(1)}
+		}
+		@keyframes l7 {
+			0%{transform: scale(0)}
+			100%{transform: scale(1);opacity: 0}
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li class="one cen">
+			<div></div>
+		</li>
+		<li class="two">
+			<div></div>
+			<div></div>
+		</li>
+		<li class="three cen">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</li>
+		<li class="four cen">
+			<div>
+				<div></div>
+				<div></div>
+			</div>
+		</li>
+		<li class="five cen">
+			<div class="cen">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</li>
+		<li class="six cen">
+			<div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</li>
+		<li class="seven cen">
+			<div></div>
+		</li>
+		<li></li>
+	</ul>
+</body>
+</html>
